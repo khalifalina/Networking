@@ -88,3 +88,78 @@ Example:
 
 ```text
 192.168.0.5
+```
+Each section represents 8 bits.
+
+## IPv6
+
+IPv6 uses a 128-bit address.
+
+```text
+2001:0db8:85a3:0000:0000:8a2e:0370:7334
+```
+
+## MAC Addresses
+
+A MAC (Media Access Control) address is a unique identifier assigned to a network interface.
+
+```text
+00:1A:2B:3C:4D:5E
+```
+
+### Key characteristics
+- 48-bit address
+- Used at the Data Link layer
+- Identifies network interfaces
+- Important for communication within a local network
+
+# Ports and Protocols
+
+## Ports
+
+A port acts as a logical endpoint for network communication.
+Applications use ports to communicate over a network.
+
+## Protocols
+
+A protocol is a set of rules that defines how data is transmitted between devices.
+Protocols allow devices and applications to communicate using agreed-upon rules.
+
+# TCP
+
+TCP stands for Transmission Control Protocol.
+
+## TCP is:
+- Connection-oriented
+- Reliable
+- Based on a handshake
+- Able to provide error checking
+- Able to provide flow control
+- Designed to deliver data in order
+
+TCP is useful when reliable communication is required.
+
+## TCP Use Cases:
+- Web browsing
+- Email
+- File transfer
+- Bidirectional communication
+
+# UDP
+UDP stands for User Datagram Protocol.
+
+## UDP is:
+- Connectionless
+- Fast
+- Less reliable than TCP
+- Does not require prior communication
+- Does not guarantee delivery
+- Does not guarantee packet ordering
+
+## UDP Use Cases:
+- Video streaming
+- Online gaming
+- DNS
+- VPN
+
+Both TCP and UDP operate at Layer 4 — the Transport Layer of the OSI model.
