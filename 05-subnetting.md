@@ -140,7 +140,75 @@ To create four subnets, the network can be divided into /26 networks.
 
 ## The resulting networks are:
 
+```text
 192.168.1.0/26
 192.168.1.64/26
 192.168.1.128/26
 192.168.1.192/26
+```
+
+---
+
+# Host Ranges
+
+## Example:
+```text
+192.168.1.0/26
+```
+
+## Network address:
+```text
+192.168.1.0
+```
+## Usable host range:
+```text
+192.168.1.1 - 192.168.1.62
+```
+
+## Broadcast address:
+```text
+192.168.1.63
+```
+
+---
+# NAT
+
+NAT stands for Network Address Translation.
+NAT translates private IP addresses to public IP addresses.
+It allows devices on an internal network to communicate with external networks such as the Internet.
+
+## How NAT Works
+
+### Example:
+```text
+Private Device
+192.168.1.10
+      ↓
+    Router
+      ↓
+Public IP
+98.117.53.254
+      ↓
+  Internet
+```
+
+The router translates the private source IP into the public IP.
+
+The external service sees the public IP rather than the device's private IP.
+
+---
+
+# Types of NAT
+
+## The main types covered are:
+- Static NAT
+- Dynamic NAT
+- PAT (Port Address Translation)
+- Benefits of NAT
+
+## NAT can:
+- Conserve public IP addresses
+- Simplify network design
+- Simplify network management
+- Improve network security
+  
