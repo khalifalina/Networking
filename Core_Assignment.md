@@ -81,6 +81,7 @@ Verified NGINX was running with `sudo systemctl status nginx`, and confirmed the
 
 ## Screenshots
 
+<img width="1632" height="916" alt="Screenshot_25-9-2026_16498_khals co uk" src="https://github.com/user-attachments/assets/413af211-d2fb-420e-877f-4764ce417f56" />
 
 ## Conclusion
 This assignment brought together domain registration, EC2 provisioning, security group configuration, NGINX installation, and DNS management into one practical exercise — successfully making a self-hosted web page publicly accessible via a custom domain.
