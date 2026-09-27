@@ -41,3 +41,46 @@ NGINX
      ↓
 Web Page
 ```
+
+## Steps Taken
+
+### 1. Domain Registration
+- Purchased the domain **khals.co.uk** and connected it to Cloudflare for DNS management.
+
+### 2. Launching the EC2 Instance
+- Launched an **Ubuntu Server** EC2 instance (t3.micro, free-tier eligible) in the AWS Console.
+- Created a new key pair for SSH access.
+- Configured the security group to allow:
+  - **SSH (port 22)** — restricted to my IP
+  - **HTTP (port 80)** — open to all (0.0.0.0/0), required for the web page to be publicly reachable
+
+### 3. Installing NGINX
+Connected to the instance via SSH and installed NGINX:
+```bash
+sudo apt update
+sudo apt install -y nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+```
+Verified NGINX was running with `sudo systemctl status nginx`, and confirmed the default page loaded at the instance's public IP before configuring DNS.
+
+### 4. Configuring DNS
+- Added an **A record** in Cloudflare pointing `khals.co.uk` → EC2 public IPv4 address.
+- Set the record to **DNS only** (not proxied), so the domain resolves directly to the EC2 instance rather than through Cloudflare's proxy — important for this assignment, since the goal is to demonstrate a direct IP-to-domain mapping.
+
+### 5. Custom Landing Page
+- Edited `/var/www/html/index.html` to replace the default NGINX page with a custom landing page including my name and links to my LinkedIn and GitHub.
+
+## Testing & Results
+- Confirmed DNS resolution using `nslookup khals.co.uk`, verifying it returned the EC2 instance's public IP.
+- Visited `http://khals.co.uk` in a browser and confirmed the custom page loaded successfully.
+
+## Challenges & Troubleshooting
+- Initially edited the wrong file (`/usr/share/nginx/html/index.html`, the RHEL/Amazon Linux path) instead of the correct Ubuntu path (`/var/www/html/index.html`) — changes weren't reflected until I found the right file.
+- The domain initially resolved to Cloudflare's proxy IPs instead of the EC2 IP, resolved by switching the A record from **Proxied** to **DNS only**.
+
+## Screenshots
+
+
+## Conclusion
+This assignment brought together domain registration, EC2 provisioning, security group configuration, NGINX installation, and DNS management into one practical exercise — successfully making a self-hosted web page publicly accessible via a custom domain.
